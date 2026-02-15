@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+bin/
+
+# Secrets — NEVER commit these
+.env
+*.tokens.json
+
+# Stream Deck logs
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / tool files
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+
+# Source maps (optional — uncomment to exclude)
+# *.map

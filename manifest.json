@@ -1,0 +1,92 @@
+{
+  "Name": "Spotify Controller",
+  "Version": "1.0.0",
+  "Author": "Cognosis LLC",
+  "Description": "Like/unlike tracks & add current song to playlists on Spotify",
+  "Icon": "imgs/plugin-icon",
+  "URL": "https://github.com/cognosis",
+  "Category": "Spotify Controller",
+  "CategoryIcon": "imgs/plugin-icon",
+  "CodePath": "bin/plugin.js",
+  "OS": [
+    { "Platform": "mac", "MinimumVersion": "10.15" },
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.9"
+  },
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "SDKVersion": 2,
+  "Actions": [
+    {
+      "Name": "Authorize Spotify",
+      "UUID": "com.cognosis.spotify-controller.authorize",
+      "Icon": "imgs/authorize-icon",
+      "Tooltip": "Connect or disconnect your Spotify account",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/authorize-icon",
+          "TitleAlignment": "bottom",
+          "FontSize": "9",
+          "Title": "Connect"
+        }
+      ]
+    },
+    {
+      "Name": "Like / Unlike Track",
+      "UUID": "com.cognosis.spotify-controller.like-track",
+      "Icon": "imgs/like-icon",
+      "Tooltip": "Toggle like on the currently playing track",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/like-off-icon",
+          "TitleAlignment": "bottom",
+          "FontSize": "9",
+          "Title": ""
+        },
+        {
+          "Image": "imgs/like-on-icon",
+          "TitleAlignment": "bottom",
+          "FontSize": "9",
+          "Title": ""
+        }
+      ]
+    },
+    {
+      "Name": "Add to Playlist",
+      "UUID": "com.cognosis.spotify-controller.add-to-playlist",
+      "Icon": "imgs/playlist-icon",
+      "Tooltip": "Add the currently playing track to a chosen playlist",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/playlist-icon",
+          "TitleAlignment": "bottom",
+          "FontSize": "9",
+          "Title": ""
+        }
+      ],
+      "PropertyInspectorPath": "ui/playlist-pi.html"
+    },
+    {
+      "Name": "Like + Add to Playlist",
+      "UUID": "com.cognosis.spotify-controller.like-and-add",
+      "Icon": "imgs/combo-icon",
+      "Tooltip": "Like the current track AND add it to a playlist in one press",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/combo-icon",
+          "TitleAlignment": "bottom",
+          "FontSize": "8",
+          "Title": ""
+        }
+      ]
+    }
+  ]
+}

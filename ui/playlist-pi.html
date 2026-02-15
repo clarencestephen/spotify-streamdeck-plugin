@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Playlist Settings</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 12px;
+      color: #ccc;
+      background: #2d2d2d;
+      margin: 0;
+      padding: 12px;
+    }
+    .sdpi-wrapper { padding: 0 4px; }
+    .sdpi-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .sdpi-item-label {
+      flex: 0 0 90px;
+      text-align: right;
+      padding-right: 8px;
+      color: #969696;
+      font-size: 11px;
+    }
+    .sdpi-item-value {
+      flex: 1;
+    }
+    select, button {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #3a3a3a;
+      border-radius: 3px;
+      background: #3a3a3a;
+      color: #d8d8d8;
+      font-size: 12px;
+      outline: none;
+    }
+    select:hover, button:hover {
+      border-color: #555;
+    }
+    button {
+      cursor: pointer;
+      background: #1DB954;
+      border-color: #1DB954;
+      color: #000;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    button:hover { background: #1ed760; border-color: #1ed760; }
+    button:disabled { background: #555; border-color: #555; color: #999; cursor: not-allowed; }
+    .status {
+      text-align: center;
+      padding: 8px;
+      color: #969696;
+      font-style: italic;
+    }
+    .selected-info {
+      font-size: 11px;
+      color: #1DB954;
+      margin-top: 4px;
+      padding-left: 98px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sdpi-wrapper">
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">Playlist</div>
+      <div class="sdpi-item-value">
+        <select id="playlistSelect" disabled>
+          <option value="">-- Loading playlists... --</option>
+        </select>
+      </div>
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label"></div>
+      <div class="sdpi-item-value">
+        <button id="refreshBtn" onclick="loadPlaylists()">🔄 Refresh Playlists</button>
+      </div>
+    </div>
+    <div id="statusMsg" class="status"></div>
+    <div id="selectedInfo" class="selected-info"></div>
+  </div>
+
+  <script>
+    // Stream Deck PI connection
+    let websocket = null;
+    let uuid = null;
+    let actionInfo = null;
+    let currentSettings = {};
+
+    function connectElgatoStreamDeckSocket(inPort, inPropertyInspectorUUID, inRegisterEvent, inInfo, inActionInfo) {
+      uuid = inPropertyInspectorUUID;
+      actionInfo = JSON.parse(inActionInfo);
+      currentSettings = actionInfo?.payload?.settings || {};
+
+      websocket = new WebSocket("ws://127.0.0.1:" + inPort);
+
+      websocket.onopen = function () {
+        // Register the PI
+        websocket.send(JSON.stringify({ event: inRegisterEvent, uuid: uuid }));
+        // Request current settings
+        websocket.send(JSON.stringify({ event: "getSettings", context: uuid }));
+        // Ask the plugin for playlists
+        requestPlaylists();
+      };
+
+      websocket.onmessage = function (evt) {
+        const msg = JSON.parse(evt.data);
+
+        if (msg.event === "didReceiveSettings") {
+          currentSettings = msg?.payload?.settings || {};
+          updateSelectedPlaylist();
+        }
+
+        // Handle playlist data sent from the plugin via sendToPropertyInspector
+        if (msg.event === "sendToPropertyInspector") {
+          const payload = msg.payload;
+          if (payload.event === "playlists") {
+            populatePlaylists(payload.playlists || []);
+          } else if (payload.event === "error") {
+            showStatus(payload.message || "An error occurred");
+          }
+        }
+      };
+    }
+
+    function requestPlaylists() {
+      if (!websocket || websocket.readyState !== 1) return;
+      websocket.send(JSON.stringify({
+        event: "sendToPlugin",
+        action: actionInfo.action,
+        context: uuid,
+        payload: { event: "getPlaylists" }
+      }));
+    }
+
+    function loadPlaylists() {
+      const select = document.getElementById("playlistSelect");
+      select.disabled = true;
+      select.innerHTML = '<option value="">-- Loading... --</option>';
+      showStatus("Fetching your playlists from Spotify...");
+      requestPlaylists();
+    }
+
+    function populatePlaylists(playlists) {
+      const select = document.getElementById("playlistSelect");
+      select.innerHTML = '<option value="">-- Choose a playlist --</option>';
+
+      playlists.forEach(function (pl) {
+        const opt = document.createElement("option");
+        opt.value = pl.id;
+        opt.textContent = pl.name + " (" + pl.tracks + " tracks)";
+        opt.dataset.name = pl.name;
+        select.appendChild(opt);
+      });
+
+      select.disabled = false;
+      showStatus(playlists.length + " playlists loaded");
+
+      // Re-select current setting if present
+      if (currentSettings.playlistId) {
+        select.value = currentSettings.playlistId;
+      }
+
+      updateSelectedPlaylist();
+    }
+
+    // When user picks a playlist
+    document.getElementById("playlistSelect").addEventListener("change", function () {
+      const select = this;
+      const selectedOption = select.options[select.selectedIndex];
+      const playlistId = select.value;
+      const playlistName = selectedOption?.dataset?.name || "";
+
+      currentSettings.playlistId = playlistId;
+      currentSettings.playlistName = playlistName;
+
+      // Save to Stream Deck
+      if (websocket && websocket.readyState === 1) {
+        websocket.send(JSON.stringify({
+          event: "setSettings",
+          context: uuid,
+          payload: currentSettings
+        }));
+      }
+
+      updateSelectedPlaylist();
+    });
+
+    function updateSelectedPlaylist() {
+      const info = document.getElementById("selectedInfo");
+      if (currentSettings.playlistName) {
+        info.textContent = "✓ Selected: " + currentSettings.playlistName;
+      } else {
+        info.textContent = "";
+      }
+    }
+
+    function showStatus(msg) {
+      document.getElementById("statusMsg").textContent = msg;
+      setTimeout(function () {
+        document.getElementById("statusMsg").textContent = "";
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
