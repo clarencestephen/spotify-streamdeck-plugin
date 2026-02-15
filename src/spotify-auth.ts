@@ -47,6 +47,11 @@ const REDIRECT_URI = "http://127.0.0.1:4202";
 if (!CLIENT_ID || !CLIENT_SECRET) {
   logger.error("Missing SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET. Create a .env file — see .env.example");
 }
+
+/** Read a value from .env (loaded at startup) or process.env */
+export function getEnv(key: string): string {
+  return dotenv[key] ?? process.env[key] ?? "";
+}
 const SCOPES = [
   "user-library-read",
   "user-library-modify",

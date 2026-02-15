@@ -4,13 +4,13 @@ import streamDeck, {
   SingletonAction,
   type WillAppearEvent,
 } from "@elgato/streamdeck";
-import { spotifyAuth } from "../spotify-auth";
+import { spotifyAuth, getEnv } from "../spotify-auth";
 import { getCurrentTrack, likeAndAddToPlaylist } from "../spotify-api";
 
 const logger = streamDeck.logger.createScope("LikeAndAdd");
 
-const PLAYLIST_ID = "0HGqu9QX72YoNhhVlj8TQH";
-const PLAYLIST_NAME = "Stream Favs";
+const PLAYLIST_ID = getEnv("SPOTIFY_PLAYLIST_ID");
+const PLAYLIST_NAME = getEnv("SPOTIFY_PLAYLIST_NAME") || "Like+Add";
 
 @action({ UUID: "com.cognosis.spotify-controller.like-and-add" })
 export class LikeAndAddAction extends SingletonAction {
@@ -23,6 +23,13 @@ export class LikeAndAddAction extends SingletonAction {
     if (!spotifyAuth.isAuthorized) {
       logger.warn("Not authorized");
       await ev.action.setTitle("Auth\nFirst!");
+      await ev.action.showAlert();
+      return;
+    }
+
+    if (!PLAYLIST_ID) {
+      logger.error("No SPOTIFY_PLAYLIST_ID set in .env file");
+      await ev.action.setTitle("Set\nPlaylist");
       await ev.action.showAlert();
       return;
     }
