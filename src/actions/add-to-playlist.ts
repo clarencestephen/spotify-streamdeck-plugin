@@ -130,7 +130,7 @@ export class AddToPlaylistAction extends SingletonAction {
       }
     };
     poll();
-    this.pollTimer = setInterval(poll, 15_000);
+    this.pollTimer = setInterval(poll, 60_000);
   }
 
   private stopPolling(): void {
