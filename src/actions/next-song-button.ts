@@ -9,7 +9,7 @@ import {
 import wrapper from './../library/wrapper.js'
 import constants from './../library/constants.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.next-song-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.next-song-button' })
 export default class NextSongButton extends Button {
 	static readonly HOLDABLE = true
 

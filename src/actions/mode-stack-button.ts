@@ -9,7 +9,7 @@ import {
 import wrapper from './../library/wrapper.js'
 import constants from '../library/constants.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.mode-stack-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.mode-stack-button' })
 export default class ModeStackButton extends Button {
 	static readonly STATABLE = true
 	static readonly MULTI = true

@@ -44,7 +44,7 @@ if %errorlevel% neq 0 (
 )
 
 echo  [3/3] Installing to Stream Deck...
-set PLUGIN_DIR=%APPDATA%\Elgato\StreamDeck\Plugins\com.ntanis.essentials-for-spotify.sdPlugin
+set PLUGIN_DIR=%APPDATA%\Elgato\StreamDeck\Plugins\com.cognosis.spotify-playlist-ops.sdPlugin
 
 :: Remove old installation if present
 if exist "%PLUGIN_DIR%" (
@@ -53,7 +53,7 @@ if exist "%PLUGIN_DIR%" (
 )
 
 :: Copy plugin
-xcopy "com.ntanis.essentials-for-spotify.sdPlugin" "%PLUGIN_DIR%" /e /i /q >nul
+xcopy "com.cognosis.spotify-playlist-ops.sdPlugin" "%PLUGIN_DIR%" /e /i /q >nul
 if %errorlevel% neq 0 (
     echo  [ERROR] Failed to copy plugin files.
     pause

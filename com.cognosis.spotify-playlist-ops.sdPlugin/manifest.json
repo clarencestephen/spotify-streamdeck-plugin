@@ -1,13 +1,13 @@
 {
-	"Name": "Essentials for Spotify",
-	"Version": "1.1.0.4",
-	"Author": "Ntanis",
+	"Name": "Spotify Playlist Ops",
+	"Version": "1.0.0",
+	"Author": "Cognosis",
 	"Actions": [
 		{
 			"Name": "Setup",
-			"UUID": "com.ntanis.essentials-for-spotify.setup-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.setup-button",
 			"Icon": "images/actions/setup",
-			"Tooltip": "Start here to setup Essentials for Spotify.",
+			"Tooltip": "Start here to setup Spotify Playlist Ops.",
 			"DisableAutomaticStates": true,
 			"SupportedInMultiActions": false,
 			"Controllers": [
@@ -26,7 +26,7 @@
 		},
 		{
 			"Name": "Play / Pause",
-			"UUID": "com.ntanis.essentials-for-spotify.play-pause-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.play-pause-button",
 			"Icon": "images/actions/play-pause",
 			"Tooltip": "Toggles between playing and pausing the current song.",
 			"PropertyInspectorPath": "pi/play-pause-button.html",
@@ -47,7 +47,7 @@
 		},
 		{
 			"Name": "Previous Song",
-			"UUID": "com.ntanis.essentials-for-spotify.previous-song-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.previous-song-button",
 			"Icon": "images/actions/previous",
 			"Tooltip": "Skips to the previous song. Hold for backward seek.",
 			"PropertyInspectorPath": "pi/previous-song-button.html",
@@ -64,7 +64,7 @@
 		},
 		{
 			"Name": "Next Song",
-			"UUID": "com.ntanis.essentials-for-spotify.next-song-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.next-song-button",
 			"Icon": "images/actions/next",
 			"Tooltip": "Advances to the next song. Hold for forward seek.",
 			"PropertyInspectorPath": "pi/next-song-button.html",
@@ -81,7 +81,7 @@
 		},
 		{
 			"Name": "Song Stack",
-			"UUID": "com.ntanis.essentials-for-spotify.song-stack-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.song-stack-button",
 			"Icon": "images/actions/song-stack",
 			"Tooltip": "Displays the information of the current song and offers a variety of control actions.",
 			"PropertyInspectorPath": "pi/song-stack-button.html",
@@ -99,7 +99,7 @@
 		},
 		{
 			"Name": "Backward Seek",
-			"UUID": "com.ntanis.essentials-for-spotify.backward-seek-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.backward-seek-button",
 			"Icon": "images/actions/backward-seek",
 			"Tooltip": "Seek backward in the current song.",
 			"PropertyInspectorPath": "pi/backward-seek-button.html",
@@ -116,7 +116,7 @@
 		},
 		{
 			"Name": "Forward Seek",
-			"UUID": "com.ntanis.essentials-for-spotify.forward-seek-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.forward-seek-button",
 			"Icon": "images/actions/forward-seek",
 			"Tooltip": "Seek forward in the current song.",
 			"PropertyInspectorPath": "pi/forward-seek-button.html",
@@ -133,7 +133,7 @@
 		},
 		{
 			"Name": "Shuffle",
-			"UUID": "com.ntanis.essentials-for-spotify.shuffle-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.shuffle-button",
 			"Icon": "images/actions/shuffle",
 			"Tooltip": "Activates or deactivates shuffle play.",
 			"DisableAutomaticStates": true,
@@ -153,7 +153,7 @@
 		},
 		{
 			"Name": "Loop Context",
-			"UUID": "com.ntanis.essentials-for-spotify.loop-context-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.loop-context-button",
 			"Icon": "images/actions/loop-context",
 			"Tooltip": "Repeats the current playlist or album.",
 			"DisableAutomaticStates": true,
@@ -173,7 +173,7 @@
 		},
 		{
 			"Name": "Loop Song",
-			"UUID": "com.ntanis.essentials-for-spotify.loop-song-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.loop-song-button",
 			"Icon": "images/actions/loop-song",
 			"Tooltip": "Repeats the current song.",
 			"DisableAutomaticStates": true,
@@ -193,7 +193,7 @@
 		},
 		{
 			"Name": "Mode Stack",
-			"UUID": "com.ntanis.essentials-for-spotify.mode-stack-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.mode-stack-button",
 			"Icon": "images/actions/mode-stack",
 			"Tooltip": "A button that combines shuffle, loop context and loop song into one.",
 			"PropertyInspectorPath": "pi/mode-stack-button.html",
@@ -210,7 +210,7 @@
 		},
 		{
 			"Name": "Like / Unlike",
-			"UUID": "com.ntanis.essentials-for-spotify.like-unlike-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.like-unlike-button",
 			"Icon": "images/actions/like-unlike",
 			"Tooltip": "Adds the current song to your liked songs or removes it if already liked.",
 			"DisableAutomaticStates": true,
@@ -230,7 +230,7 @@
 		},
 		{
 			"Name": "Add to Playlist",
-			"UUID": "com.ntanis.essentials-for-spotify.add-to-playlist-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.add-to-playlist-button",
 			"Icon": "images/actions/add-to-playlist",
 			"Tooltip": "Adds the currently playing song to a selected playlist of yours.",
 			"PropertyInspectorPath": "pi/add-to-playlist-button.html",
@@ -248,7 +248,7 @@
 		},
 		{
 			"Name": "Explicit Indicator",
-			"UUID": "com.ntanis.essentials-for-spotify.song-explicit-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.song-explicit-button",
 			"Icon": "images/actions/song-explicit",
 			"Tooltip": "Shows whether the current song is explicit or not",
 			"DisableAutomaticStates": true,
@@ -269,7 +269,7 @@
 		},
 		{
 			"Name": "Volume Up",
-			"UUID": "com.ntanis.essentials-for-spotify.volume-up-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.volume-up-button",
 			"Icon": "images/actions/volume-up",
 			"Tooltip": "Increases the playback volume.",
 			"PropertyInspectorPath": "pi/volume-up-button.html",
@@ -286,7 +286,7 @@
 		},
 		{
 			"Name": "Volume Down",
-			"UUID": "com.ntanis.essentials-for-spotify.volume-down-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.volume-down-button",
 			"Icon": "images/actions/volume-down",
 			"Tooltip": "Decreases the playback volume.",
 			"PropertyInspectorPath": "pi/volume-down-button.html",
@@ -303,7 +303,7 @@
 		},
 		{
 			"Name": "Volume Mute / Unmute",
-			"UUID": "com.ntanis.essentials-for-spotify.volume-mute-unmute-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.volume-mute-unmute-button",
 			"Icon": "images/actions/volume-mute-unmute",
 			"Tooltip": "Toggles between muting and unmuting the volume.",
 			"DisableAutomaticStates": true,
@@ -323,7 +323,7 @@
 		},
 		{
 			"Name": "Volume Stack",
-			"UUID": "com.ntanis.essentials-for-spotify.volume-stack-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.volume-stack-button",
 			"Icon": "images/actions/volume-stack",
 			"Tooltip": "A button that combines volume up, volume down and volume mute / unmute into one.",
 			"PropertyInspectorPath": "pi/volume-stack-button.html",
@@ -340,7 +340,7 @@
 		},
 		{
 			"Name": "Play Context",
-			"UUID": "com.ntanis.essentials-for-spotify.play-context-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.play-context-button",
 			"Icon": "images/actions/play-context",
 			"Tooltip": "Map this button to any supported Spotify URL and press it to start playing.",
 			"PropertyInspectorPath": "pi/play-context-button.html",
@@ -357,7 +357,7 @@
 		},
 		{
 			"Name": "Song Clipboard",
-			"UUID": "com.ntanis.essentials-for-spotify.song-clipboard-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.song-clipboard-button",
 			"Icon": "images/actions/song-clipboard",
 			"Tooltip": "Copies the information of the current song to the clipboard.",
 			"DisableAutomaticStates": true,
@@ -373,7 +373,7 @@
 		},
 		{
 			"Name": "Context Information",
-			"UUID": "com.ntanis.essentials-for-spotify.context-information-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.context-information-button",
 			"Icon": "images/actions/context-information",
 			"Tooltip": "Displays the information of the current context.",
 			"PropertyInspectorPath": "pi/context-information.html",
@@ -391,7 +391,7 @@
 		},
 		{
 			"Name": "Transfer Playback",
-			"UUID": "com.ntanis.essentials-for-spotify.transfer-playback-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.transfer-playback-button",
 			"Icon": "images/actions/transfer-playback",
 			"Tooltip": "Allows you to transfer the playback to another device.",
 			"PropertyInspectorPath": "pi/transfer-playback-button.html",
@@ -408,7 +408,7 @@
 		},
 		{
 			"Name": "User Information",
-			"UUID": "com.ntanis.essentials-for-spotify.user-information-button",
+			"UUID": "com.cognosis.spotify-playlist-ops.user-information-button",
 			"Icon": "images/actions/user-information",
 			"Tooltip": "Displays the information of the connected user.",
 			"PropertyInspectorPath": "pi/user-information-button.html",
@@ -427,7 +427,7 @@
 		},
 		{
 			"Name": "Playback Control",
-			"UUID": "com.ntanis.essentials-for-spotify.playback-control-dial",
+			"UUID": "com.cognosis.spotify-playlist-ops.playback-control-dial",
 			"Icon": "images/actions/playback-control",
 			"Tooltip": "Controls the playback of the current song.",
 			"PropertyInspectorPath": "pi/playback-control-dial.html",
@@ -453,7 +453,7 @@
 		},
 		{
 			"Name": "Volume Control",
-			"UUID": "com.ntanis.essentials-for-spotify.volume-control-dial",
+			"UUID": "com.cognosis.spotify-playlist-ops.volume-control-dial",
 			"Icon": "images/actions/volume-control",
 			"Tooltip": "Controls the playback volume.",
 			"PropertyInspectorPath": "pi/volume-control-dial.html",
@@ -478,7 +478,7 @@
 		},
 		{
 			"Name": "My Playlists",
-			"UUID": "com.ntanis.essentials-for-spotify.my-playlists-dial",
+			"UUID": "com.cognosis.spotify-playlist-ops.my-playlists-dial",
 			"Icon": "images/actions/playlists",
 			"Tooltip": "Navigate and play through your playlists.",
 			"Controllers": [
@@ -503,7 +503,7 @@
 		},
 		{
 			"Name": "My Liked Songs",
-			"UUID": "com.ntanis.essentials-for-spotify.my-liked-songs-dial",
+			"UUID": "com.cognosis.spotify-playlist-ops.my-liked-songs-dial",
 			"Icon": "images/actions/items",
 			"Tooltip": "Navigate and play through your liked songs.",
 			"Controllers": [
@@ -527,13 +527,13 @@
 			}
 		}
 	],
-	"Category": "Essentials for Spotify",
+	"Category": "Spotify Playlist Ops",
 	"CategoryIcon": "images/plugin/category",
 	"CodePath": "bin/plugin.js",
 	"Description": "Effortlessly control your Spotify through your Elgato Stream Deck. A Spotify Premium account is required to use the full functionality of this plugin.",
 	"Icon": "images/plugin/marketplace",
 	"SDKVersion": 2,
-	"URL": "https://github.com/ntanis-dev/essentials-for-spotify",
+	"URL": "https://github.com/clarencestephen/spotify-darth-bankai",
 	"Software": {
 		"MinimumVersion": "6.4"
 	},
@@ -550,7 +550,7 @@
 	"Nodejs": {
 		"Version": "20"
 	},
-	"UUID": "com.ntanis.essentials-for-spotify",
+	"UUID": "com.cognosis.spotify-playlist-ops",
 	"Profiles": [
 		{
 			"Name": "SD",

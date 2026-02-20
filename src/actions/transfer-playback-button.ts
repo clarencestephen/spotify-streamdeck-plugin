@@ -12,7 +12,7 @@ import constants from '../library/constants.js'
 import wrapper from './../library/wrapper.js'
 import connector from '../library/connector.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.transfer-playback-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.transfer-playback-button' })
 export default class TransferPlaybackButton extends Button {
 	static readonly STATABLE = true
 

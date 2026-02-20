@@ -9,7 +9,7 @@ import {
 
 import wrapper from './../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.like-unlike-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.like-unlike-button' })
 export default class LikeUnlikeButton extends Button {
 	static readonly STATABLE = true
 

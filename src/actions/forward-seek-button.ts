@@ -9,7 +9,7 @@ import {
 import wrapper from './../library/wrapper.js'
 import constants from './../library/constants.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.forward-seek-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.forward-seek-button' })
 export default class ForwardSeekButton extends Button {
 	static readonly HOLDABLE = true
 

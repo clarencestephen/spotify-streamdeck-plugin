@@ -11,7 +11,7 @@ import constants from '../library/constants.js'
 import images from '../library/images.js'
 import wrapper from '../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.play-context-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.play-context-button' })
 export default class PlayContextButton extends Button {
 	static readonly STATABLE = true
 

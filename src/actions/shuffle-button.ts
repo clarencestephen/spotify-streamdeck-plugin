@@ -8,7 +8,7 @@ import {
 
 import wrapper from './../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.shuffle-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.shuffle-button' })
 export default class ShuffleButton extends Button {
 	static readonly STATABLE = true
 

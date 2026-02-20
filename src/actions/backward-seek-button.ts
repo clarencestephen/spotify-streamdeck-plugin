@@ -9,7 +9,7 @@ import {
 import wrapper from './../library/wrapper.js'
 import constants from './../library/constants.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.backward-seek-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.backward-seek-button' })
 export default class BackwardSeekButton extends Button {
 	static readonly HOLDABLE = true
 

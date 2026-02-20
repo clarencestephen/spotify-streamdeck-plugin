@@ -11,7 +11,7 @@ import constants from './../library/constants.js'
 import images from './../library/images.js'
 import wrapper from './../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.items-dial' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.items-dial' })
 export default class ItemsDial extends Dial {
 	#currentItems: any = {}
 	#itemsPage: any = {}

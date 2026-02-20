@@ -11,7 +11,7 @@ import {
 import images from '../library/images.js'
 import wrapper from '../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.user-information-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.user-information-button' })
 export default class UserInformationButton extends Button {
 	static readonly STATABLE = true
 

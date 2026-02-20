@@ -9,7 +9,7 @@ import {
 import constants from '../library/constants.js'
 import wrapper from './../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.volume-up-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.volume-up-button' })
 export default class VolumeUpButton extends Button {
 	static readonly HOLDABLE = true
 

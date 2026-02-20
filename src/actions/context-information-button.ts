@@ -17,7 +17,7 @@ import constants from '../library/constants.js'
 import images from '../library/images.js'
 import wrapper from '../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.context-information-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.context-information-button' })
 export default class ContextInformationButton extends Button {
 	static readonly STATABLE = true
 

@@ -17,7 +17,7 @@ import constants from '../library/constants.js'
 import images from '../library/images.js'
 import wrapper from '../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.song-stack-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.song-stack-button' })
 export default class SongStackButton extends Button {
 	static readonly STATABLE = true
 	static readonly MULTI = true

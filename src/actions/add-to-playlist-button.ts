@@ -12,7 +12,7 @@ import constants from '../library/constants.js'
 import wrapper from './../library/wrapper.js'
 import connector from '../library/connector.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.add-to-playlist-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.add-to-playlist-button' })
 export default class AddToPlaylistButton extends Button {
 	static readonly STATABLE = true
 

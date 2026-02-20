@@ -28,7 +28,7 @@ echo "  [2/3] Building plugin..."
 npm run build --silent
 
 echo "  [3/3] Installing to Stream Deck..."
-PLUGIN_DIR="$HOME/Library/Application Support/com.elgato.StreamDeck/Plugins/com.ntanis.essentials-for-spotify.sdPlugin"
+PLUGIN_DIR="$HOME/Library/Application Support/com.elgato.StreamDeck/Plugins/com.cognosis.spotify-playlist-ops.sdPlugin"
 
 # Remove old installation if present
 if [ -d "$PLUGIN_DIR" ]; then
@@ -37,7 +37,7 @@ if [ -d "$PLUGIN_DIR" ]; then
 fi
 
 # Copy plugin
-cp -r "com.ntanis.essentials-for-spotify.sdPlugin" "$PLUGIN_DIR"
+cp -r "com.cognosis.spotify-playlist-ops.sdPlugin" "$PLUGIN_DIR"
 
 echo ""
 echo "  Done! Restart Stream Deck to load the plugin."

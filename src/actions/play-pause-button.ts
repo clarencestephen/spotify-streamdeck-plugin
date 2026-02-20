@@ -9,7 +9,7 @@ import {
 
 import wrapper from './../library/wrapper.js'
 
-@action({ UUID: 'com.ntanis.essentials-for-spotify.play-pause-button' })
+@action({ UUID: 'com.cognosis.spotify-playlist-ops.play-pause-button' })
 export default class PlayPauseButton extends Button {
 	constructor() {
 		super()

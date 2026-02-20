@@ -13,7 +13,7 @@ const config = {
 	input: 'src/plugin.js',
 
 	output: {
-		file: 'com.ntanis.essentials-for-spotify.sdPlugin/bin/plugin.js',
+		file: 'com.cognosis.spotify-playlist-ops.sdPlugin/bin/plugin.js',
 		sourcemap: isWatching,
 
 		sourcemapPathTransform: (relativeSourcePath, sourcemapPath) => {
@@ -54,7 +54,7 @@ const config = {
 
 			buildStart(){
 				this.addWatchFile('src/ui')
-				this.addWatchFile('com.ntanis.essentials-for-spotify.sdPlugin/manifest.json')
+				this.addWatchFile('com.cognosis.spotify-playlist-ops.sdPlugin/manifest.json')
 			}
 		},
 
@@ -62,17 +62,17 @@ const config = {
 			targets: [
 				{
 					src: 'src/ui/setup',
-					dest: 'com.ntanis.essentials-for-spotify.sdPlugin/bin'
+					dest: 'com.cognosis.spotify-playlist-ops.sdPlugin/bin'
 				},
 
 				{
 					src: 'src/ui/pi',
-					dest: 'com.ntanis.essentials-for-spotify.sdPlugin'
+					dest: 'com.cognosis.spotify-playlist-ops.sdPlugin'
 				},
 
 				{
 					src: 'src/localization/*',
-					dest: 'com.ntanis.essentials-for-spotify.sdPlugin'
+					dest: 'com.cognosis.spotify-playlist-ops.sdPlugin'
 				}
 			]
 		})
